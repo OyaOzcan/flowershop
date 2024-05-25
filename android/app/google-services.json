@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1022326004239",
+    "project_id": "caseapp-f7745",
+    "storage_bucket": "caseapp-f7745.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022326004239:android:1d5cf90886f0a77e7e217a",
+        "android_client_info": {
+          "package_name": "com.example.caseapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZD1v6UzGyb-poYvfX1mHyeMJMuSK8XPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
