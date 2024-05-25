@@ -70,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         if (!_isLogin)
                           TextFormField(
                             decoration: const InputDecoration(
-                                labelText: "Kullanıcı Adı"),
+                                labelText: "Name"),
                             autocorrect: false,
                             onSaved: (newValue) => _username = newValue!,
                           ),
@@ -78,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             height: MediaQuery.of(context).size.height * 0.005),
                         TextFormField(
                           decoration:
-                              const InputDecoration(labelText: "E-posta"),
+                              const InputDecoration(labelText: "E-mail"),
                           autocorrect: false,
                           keyboardType: TextInputType.emailAddress,
                           onSaved: (newValue) => _email = newValue!,
@@ -86,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         SizedBox(
                             height: MediaQuery.of(context).size.height * 0.005),
                         TextFormField(
-                          decoration: const InputDecoration(labelText: "Şifre"),
+                          decoration: const InputDecoration(labelText: "Password"),
                           autocorrect: false,
                           obscureText: true,
                           onSaved: (newValue) => _password = newValue!,
@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: ElevatedButton(
                             onPressed: _submit,
                             child: Text(
-                              _isLogin ? "Giriş Yap" : "Kayıt Ol",
+                              _isLogin ? "Login" : "Register",
                               style: TextStyle(
                                   color: Color.fromARGB(255, 110, 19, 13)),
                             ),
@@ -108,8 +108,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           onPressed: () => setState(() => _isLogin = !_isLogin),
                           child: Text(
                             _isLogin
-                                ? "Kayıt Sayfasına Git"
-                                : "Giriş Sayfasına Git",
+                                ? "Don't have an account? Register"
+                                : "Do you have an account? Login",
                             style: TextStyle(
                                 color: Color.fromARGB(255, 110, 19, 13)),
                           ),
@@ -122,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ElevatedButton.icon(
                               onPressed: (){},
                               icon: Icon(FontAwesomeIcons.google, color: Colors.white),
-                              label: Text("Google ile Giriş Yap"),
+                              label: Text("Sign In with Google"),
                               style: ElevatedButton.styleFrom(
                                 foregroundColor: Colors.white,
                                 backgroundColor: Color(0xffF4C2C2),
@@ -137,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         const Divider(),
                         SizedBox(
                             height: MediaQuery.of(context).size.height * 0.009),
-                        const Text("Parolamı Unuttum"),
+                        const Text("Forgot my password"),
                       ],
                     ),
                   ),

@@ -8,6 +8,7 @@ class FavoritesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final favoritesViewModel = Provider.of<FavoritesViewModel>(context);
     final cartViewModel = Provider.of<CartViewModel>(context);
+    final screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
       appBar: AppBar(
@@ -22,23 +23,27 @@ class FavoritesPage extends StatelessWidget {
                 return Column(
                   children: [
                     ListTile(
-                      leading: Image.asset(flower.imagePath, width: 70, height: 70),
+                      leading: Image.asset(
+                        flower.imagePath,
+                        width: screenSize.width * 0.2, 
+                        height: screenSize.height * 0.1, 
+                      ),
                       title: Text(flower.name),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(flower.description),
                           Text('\$${flower.price}'),
-                          SizedBox(height: 8), 
+                          SizedBox(height: screenSize.height * 0.01), 
                           Container(
-                            width: 100, 
-                            height: 30, 
+                            width: screenSize.width * 0.25, 
+                            height: screenSize.height * 0.04, 
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.white,
                                 padding: EdgeInsets.zero,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5), // Köşelerin ovalliğini azalt
+                                  borderRadius: BorderRadius.circular(5),
                                 ),
                               ),
                               onPressed: () {
@@ -51,7 +56,8 @@ class FavoritesPage extends StatelessWidget {
                                 'Add to Cart', 
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 110, 19, 13),
-                                  fontSize: 12)),
+                                  fontSize: screenSize.width * 0.03, 
+                                )),
                             ),
                           ),
                         ],
@@ -62,15 +68,18 @@ class FavoritesPage extends StatelessWidget {
                           favoritesViewModel.removeFavorite(flower.id);
                         },
                       ),
-                      contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: screenSize.height * 0.01, 
+                        horizontal: screenSize.width * 0.04, 
+                      ),
                     ),
                     if (index < favoritesViewModel.favorites.length - 1)
                       Divider(
                         color: Colors.grey,
                         height: 1,
                         thickness: 1,
-                        indent: 16,
-                        endIndent: 16,
+                        indent: screenSize.width * 0.04, 
+                        endIndent: screenSize.width * 0.04, 
                       ),
                   ],
                 );
